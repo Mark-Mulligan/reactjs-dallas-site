@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 // Internal Dependencies
 import ReactLogoSvg from '../images/react-logo.svg';
+import './header.css';
 
 // Local Variables
 const propTypes = {
@@ -30,12 +31,13 @@ const styles = {
   },
   nav: {
     alignItems: 'baseline',
-    display: 'flex',
     fontFamily: 'Roboto',
-    justifyContent: 'space-around',
     margin: '0 auto',
     maxWidth: 960,
     padding: '1rem',
+  },
+  navItem: {
+    textAlign: 'center'
   },
   root: {
     background: '#20232A',
@@ -45,8 +47,8 @@ const styles = {
 // Component Definition
 const Header = ({ classes, siteTitle }) => (
   <div className={classes.root}>
-    <div className={classes.nav}>
-      <div>
+    <div className={`${classes.nav} nav-items-wrapper`}>
+      <div className={classes.navItem}>
         <Link
           className={classes.link}
           to="/"
@@ -54,7 +56,7 @@ const Header = ({ classes, siteTitle }) => (
           <ReactLogoSvg className={classes.logo} /> {siteTitle}
         </Link>
       </div>
-      <div>
+      <div className={classes.navItem}>
         <Link
           className={classes.link}
           to="/events"
@@ -62,7 +64,7 @@ const Header = ({ classes, siteTitle }) => (
           Events
         </Link>
       </div>
-      <div>
+      <div className={classes.navItem}>
         <Link
           className={classes.link}
           to="/backers"

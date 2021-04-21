@@ -6,7 +6,6 @@ import { withStyles } from '@material-ui/core/styles';
 
 // Internal Dependencies
 import ReactLogoSvg from '../images/react-logo.svg';
-import './header.css';
 
 // Local Variables
 const propTypes = {
@@ -31,6 +30,12 @@ const styles = {
   },
   nav: {
     alignItems: 'baseline',
+    display: 'grid',
+    gridTemplateColumns: '33% 33% 33%',
+    '@media (max-width: 512px)': {
+      display: 'flex',
+      justifyContent: 'space-around'
+    },
     fontFamily: 'Roboto',
     margin: '0 auto',
     maxWidth: 960,
